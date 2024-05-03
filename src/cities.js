@@ -1,14 +1,14 @@
 ﻿export const cities = [
   {
     id: 1,
-    title: "Город 1",
+    title: "Ратае",
   },
   {
     id: 2,
-    title: "Город 2",
+    title: "Тальмберг",
   },
   {
     id: 3,
-    title: "Город 3",
+    title: "Прибыславица",
   },
 ];
