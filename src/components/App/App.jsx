@@ -34,6 +34,7 @@ function App() {
     deposits,
     cityStorages,
     buyGoods,
+    openDeposit,
   } = useAppLogic();
 
   return (
@@ -78,7 +79,11 @@ function App() {
             <Stats days={days} money={money} />
           </div>
           <div className="deposits">
-            <Bank deposits={deposits} />
+            <Bank
+              deposits={deposits}
+              onOpenDeposit={openDeposit}
+              money={money}
+            />
           </div>
         </div>
         <div className="column">

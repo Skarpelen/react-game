@@ -31,8 +31,9 @@ function Transportations(props) {
                     {findGoodById(order.goodId)}, {order.qty} шт.
                   </div>
                   <div className="path">
-                    {getCityById(order.fromCityId)} ->{" "}
-                    {getCityById(order.targetCityId)}
+                    Из: {getCityById(order.fromCityId)}
+                    <br />
+                    В: {getCityById(order.targetCityId)}
                   </div>
                 </div>
                 <div>
