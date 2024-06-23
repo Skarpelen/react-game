@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import "./App.scss";
 
 import Cities from "../Cities/Cities";
@@ -9,12 +9,7 @@ import Stats from "../Stats/Stats";
 import Bank from "../Bank/Bank";
 import { useAppLogic } from "../hooks/useAppLogic";
 
-import {
-  defaultCityStoragesData,
-  defaultDeposits,
-  defaultStoragesData,
-  goods,
-} from "../../config";
+import { gameStatuses, goods } from "../../config";
 
 function App() {
   const {
@@ -35,11 +30,24 @@ function App() {
     cityStorages,
     buyGoods,
     openDeposit,
+    gameStatus,
   } = useAppLogic();
 
   return (
     <div className="app">
       <h1 className="app-name">Торговец</h1>
+
+      {gameStatus === gameStatuses.win ? (
+        <h2 className="game-status win">Вы выиграли!</h2>
+      ) : (
+        ""
+      )}
+
+      {gameStatus === gameStatuses.fail ? (
+        <h2 className="game-status fail">Вы проиграли!</h2>
+      ) : (
+        ""
+      )}
 
       <Cities
         currentCity={currentCity}

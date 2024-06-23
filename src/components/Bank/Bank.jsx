@@ -1,9 +1,8 @@
 import "./Bank.scss";
-import { cities } from "../../cities";
 import React, { useState } from "react";
 
 function Bank({ money, deposits, onOpenDeposit }) {
-  const [amount, setAmount] = useState(null);
+  const [amount, setAmount] = useState("");
   return (
     <div>
       <h2 className="title">Банк</h2>
@@ -35,9 +34,9 @@ function Bank({ money, deposits, onOpenDeposit }) {
           </div>
         </div>
 
-        {deposits.map((deposit) => {
+        {deposits.map((deposit, index) => {
           return (
-            <div className="good-item-wrapper">
+            <div className="good-item-wrapper" key={"deposit-" + index}>
               <div className="good-item-description">
                 <div className={"good-item item-deposit"}></div>
               </div>
